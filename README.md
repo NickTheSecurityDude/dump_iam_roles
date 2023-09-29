@@ -6,7 +6,7 @@ Example:
 ```
 python3 dump_roles.py > role_dump.json 
 
-# Searching - Note doesn't take into account NotAction/NotResource, conditions, etc
+# Searching - Note below queries don't take into account NotAction/NotResource, conditions, etc
 
 # all roles with admin access
 cat role_dump.json| jq -r '.roles[] | select(.policies[][].Action[]=="*") |  .roleName' |sort -n | uniq
